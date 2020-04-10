@@ -14,3 +14,8 @@ This script will provide a list of all open port on a machine formated in a way 
 > bash port_list.sh
 
 ![Port List Screenshot](images/port_list.png)
+
+### SEND ANONYMOUS EMAIL
+This script will help you sending anonymous email to a specified Email address.
+
+> python3 AnonymousEmail.py
