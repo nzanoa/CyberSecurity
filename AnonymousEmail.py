@@ -1,8 +1,7 @@
-#! /usr/bin/python3
-
+#!/usr/bin/python3
 import mechanize
-from signal import signal, SIGINT
 from sys import exit
+from signal import signal, SIGINT
 
 # Header
 header = """[[YELLOW]]
