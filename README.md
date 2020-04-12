@@ -1,5 +1,5 @@
 # CyberSecurity
-## Few Enumeration Scripts in Bash
+## Few scripts necessary for Pentesters
 
 ### PING SWEEP
 This script will help you discover hosts alive in a subnet.
