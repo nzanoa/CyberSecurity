@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import zipfile
+from zipfile import ZipFile
 import argparse
 from signal import signal, SIGINT
 
@@ -44,18 +44,19 @@ print(ColorText(header))
 
 # Set argument
 parser = argparse.ArgumentParser(prog=" BruteForceZip", description=" Brutefore Zip File")
-parser.add_argument("-z", "--zipfile", type=int, metavar='', required=True, help="Zip File")
-parser.add_argument("-p", "--passfile", type=int, metavar='', required=True, help="Password File")
+parser.add_argument("-z", "--zipfile", metavar='', required=True, help="Zip File")
+parser.add_argument("-p", "--passfile", metavar='', required=True, help="Password File")
 args = parser.parse_args()
 
 try:
-    zfile = open(args.zipfile, 'r')
+    zfile = ZipFile(args.zipfile)
     passfile = open(args.passfile, 'r')
-
+    # with ZipFile(args.zipfile) as myzip:
     for line in passfile.readlines():
-    	password = line.strip('\n')
-    	zfile.extractall(pwd=password)
-    	print(" [+][[GREEN]] Password Found = {}[[NC]]\n".format(password))
-    	exit(0)
+        password = line.strip('\n')
+        # myzip.extractall(pwd=password)
+        zfile.extractall(pwd=password)
+        print(" [+][[GREEN]] Password Found = {}[[NC]]\n".format(password))
+        exit(0)
 except:
     print(args.help)

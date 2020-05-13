@@ -9,7 +9,7 @@ header = """[[YELLOW]]
  ############## ANONYMOUS EMAIL ##############
  #############################################
 
- The Script will an anonymous email to the
+ The Script will send an anonymous email to the
  specified Email address. By Nzanoa.[[NC]]
  eg. [[LPURPLE]]python3 AnonymousEmail.py[[NC]]
 """
