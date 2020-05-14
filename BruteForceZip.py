@@ -36,9 +36,8 @@ header = """[[YELLOW]]
 
  This Script will help you bruteforce a zip
  file. By Nzanoa.[[NC]]
- eg. [[LPURPLE]]python3 BruteForceZip.py -z file.zip -p pwd.txt[[NC]]
+ eg. [[LPURPLE]]./BruteForceZip.py -z file.zip -p pwd.txt[[NC]]
 """
-
 # Print Header
 print(ColorText(header))
 
