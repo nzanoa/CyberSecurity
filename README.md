@@ -1,6 +1,13 @@
 # CyberSecurity
 ## Few scripts necessary for Pentesters
 
+### HTML PAGE CLONER
+This script will help you clone all Front-End resources of a website (HTML/ CSS / JS / Others).
+
+> python3  HTMLPageCloner.py -u https://moyindugeek.com -f test.html
+
+![HTTP Page Cloner](images/htmlpagecloner.png)
+
 ### PING SWEEP
 This script will help you discover hosts alive in a subnet.
 
@@ -15,13 +22,6 @@ This script will provide a list of all open port on a machine formated in a way 
 
 ![Port List Screenshot](images/port_list.png)
 
-
-### HTML PAGE CLONER
-This script will help you clone all Front-End resources of a website (HTML/ CSS / JS / Others).
-
-> python3  HTMLPageCloner.py -u https://moyindugeek.com -f test.html
-
-![HTTP Page Cloner](images/htmlpagecloner.png)
 
 ### SEND ANONYMOUS EMAIL
 This script will help you sending anonymous email to a specified Email address.
