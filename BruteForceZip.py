@@ -56,7 +56,10 @@ try:
         password = line.strip('\n')
         # myzip.extractall(pwd=password)
         zfile.extractall(pwd=password)
-        print(" [+][[GREEN]] Password Found = {}[[NC]]\n".format(password))
+        show_results = " [+][[GREEN]] Password Found = {}[[NC]]\n".format(password)
+        print(ColorText(show_results))
         exit(0)
-except:
+except Exception as e:
+    show_error = "[+][[RED]] [-] " + e + " [NC]]"
+    print(ColorText(show_error))
     print(args.help)
