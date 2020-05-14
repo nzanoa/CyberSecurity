@@ -11,7 +11,7 @@ header = """[[YELLOW]]
 
  The Script allows you to clone the HTML Source
  code of any web page (Online/Local). By Nzanoa.[[NC]]
- ie. [[LPURPLE]]python3 HTTPageCloner.py -u https://moyindugeek.com[[NC]]
+ ie. [[LPURPLE]]./HTTPageCloner.py -u https://moyindugeek.com -f test.html[[NC]]
 """
 
 # Colors
