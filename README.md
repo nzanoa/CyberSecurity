@@ -19,9 +19,9 @@ This script will provide a list of all open port on a machine formated in a way 
 ### HTML PAGE CLONER
 This script will help you clone all Front-End resources of a website (HTML/ CSS / JS / Others).
 
-> python3  HTMLPageCloner.py -u http://example.com -f test.html
+> python3  HTMLPageCloner.py -u https://moyindugeek.com -f test.html
 
-![Port List Screenshot](images/htmlpagecloner.png)
+![HTTP Page Cloner](images/htmlpagecloner.png)
 
 ### SEND ANONYMOUS EMAIL
 This script will help you sending anonymous email to a specified Email address.
