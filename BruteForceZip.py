@@ -50,15 +50,19 @@ args = parser.parse_args()
 try:
     zfile = ZipFile(args.zipfile)
     passfile = open(args.passfile, 'r')
+    test_amount = 0
     # with ZipFile(args.zipfile) as myzip:
     for line in passfile.readlines():
         password = line.strip('\n')
         # myzip.extractall(pwd=password)
-        zfile.extractall(pwd=password)
-        show_results = " [+][[GREEN]] Password Found = {}[[NC]]\n".format(password)
-        print(ColorText(show_results))
-        exit(0)
+        try:
+            zfile.extractall(pwd=password)
+            show_results = " [+] Password Found =[[GREEN]] {}[[NC]]\n".format(password)
+            print(ColorText(show_results))
+            exit(0)
+        except Exception as e:
+            test_amount += 1
 except Exception as e:
     show_error = "[+][[RED]] [-] " + e + " [NC]]"
-    print(ColorText(show_error))
-    print(args.help)
+    # print(ColorText(show_error))
+    print("Quit after " + test_amount + "tries")

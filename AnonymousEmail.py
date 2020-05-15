@@ -45,21 +45,21 @@ print(ColorText(header))
 # def anonymouse():
 br = mechanize.Browser()
 # Recipient
-input_recipient = " [+][[BLUE]] Enter the recipient Email> [[NC]]"
+input_recipient = " [+][[BLUE]] Enter the recipient Email >> [[NC]]"
 recipient = input("{}".format(ColorText(input_recipient)))
 # Subject
-input_subject = " [+][[BLUE]] Enter the Subject > [[NC]]"
+input_subject = " [+][[BLUE]] Enter the Subject >> [[NC]]"
 subject = input("{}".format(ColorText(input_subject)))
 # Message
-input_message = " [+][[BLUE]] Enter your message > [[NC]]"
+input_message = " [+][[BLUE]] Enter your message >> [[NC]]"
 message = input("{}".format(ColorText(input_message)))
-
 # Proxy
 url = "http://anonymouse.org/anonemail.html"
 headers = "Mozilla/4.0 (compatible; MSIE 5.0; AOL 4.0; Windows 95; c_athome)"
 br.addheaders = [('User-agent', headers)]
-# Build Header
+
 try:
+    # Build Header
     br.open(url)
     br.set_handle_equiv(True)
     br.set_handle_gzip(True)
@@ -78,20 +78,19 @@ try:
     print(ColorText(check_submit))
 except:
     fail_submit = " [-][[RED]] Error sending the email[[NC]]\n"
+    # show_error = " [-][[RED]] " + e + "[[NC]]\n"
     print(ColorText(fail_submit))
+    # print(ColorText(show_error))
 
 # Getting response back
 response = br.response().read()
-
+str_response = response.decode()
 # Chech if successfull
-keywords = "The e-mail has been sent"
-
-try:
-    if keywords in response:
-        check_response = " [+][[GREEN]] Mail has been recived![[NC]]"
-        print(ColorText(check_response))
-except:
+confirmation_phrase = "The e-mail has been sent anonymously"
+# Check whether email was sent
+if confirmation_phrase in str_response:
+    check_response = " [+][[GREEN]] Mail was successfully sent[[NC]]\n"
+    print(ColorText(check_response))
+else:
     fail_response = " [-][[RED]] An error occured[[NC]]\n"
     print(ColorText(fail_response))
-
-# anonymouse()
