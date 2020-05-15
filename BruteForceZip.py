@@ -46,23 +46,25 @@ parser = argparse.ArgumentParser(prog=" BruteForceZip", description=" Brutefore 
 parser.add_argument("-z", "--zipfile", metavar='', required=True, help="Zip File")
 parser.add_argument("-p", "--passfile", metavar='', required=True, help="Password File")
 args = parser.parse_args()
-
+show_results = ""
 try:
     zfile = ZipFile(args.zipfile)
-    passfile = open(args.passfile, 'r')
+    passfile = open(args.passfile)
     test_amount = 0
-    # with ZipFile(args.zipfile) as myzip:
     for line in passfile.readlines():
-        password = line.strip('\n')
-        # myzip.extractall(pwd=password)
+        password = line.strip("\n")
         try:
-            zfile.extractall(pwd=password)
-            show_results = " [+] Password Found =[[GREEN]] {}[[NC]]\n".format(password)
+            zfile.extractall(pwd=password.encode('ascii', 'ignore'))
+            show_results = " [+] Password Found: [[GREEN]]{}[[NC]] ( {} tries )\n".format(password,test_amount)
             print(ColorText(show_results))
-            exit(0)
-        except Exception as e:
-            test_amount += 1
+            quit(0)
+        except:
+           test_amount += 1
 except Exception as e:
-    show_error = "[+][[RED]] [-] " + e + " [NC]]"
-    # print(ColorText(show_error))
-    print("Quit after " + test_amount + "tries")
+    show_error = " [-] [[RED]]" + str(e) + " [[NC]]\n"
+    print(ColorText(show_error))
+    # print("Quit after " + str(e) + " tries")
+# Doesn't exist
+if not show_results:
+    not_found = " [-] [[BLUE]]Password doesn't exist in this wordlist [[NC]]\n"
+    print(ColorText(not_found))
