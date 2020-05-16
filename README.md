@@ -34,6 +34,8 @@ This script will help you sending anonymous email to a specified Email address.
 
 > python3 AnonymousEmail.py
 
+![Send Anonymous Email](images/sendanonymousemail.png)
+
 ### BRUTEFORCE FTP
 This Script will help you bruteforce remotely a ftp account.
 
