@@ -22,16 +22,17 @@ This script will provide a list of all open port on a machine formated in a way 
 
 ![Port List Screenshot](images/port_list.png)
 
+### BRUTEFORCE ZIP
+This Script will help you bruteforce a zip file.
+
+> python3 BruteForceZip.py --zipfile file.zip --passfile pwd.txt
+
+![Bruteforce Zip File](images/bruteforcezip.png)
 
 ### SEND ANONYMOUS EMAIL
 This script will help you sending anonymous email to a specified Email address.
 
 > python3 AnonymousEmail.py
-
-### BRUTEFORCE ZIP
-This Script will help you bruteforce a zip file.
-
-> python3 BruteForceZip.py --zipfile file.zip --passfile pwd.txt
 
 ### BRUTEFORCE FTP
 This Script will help you bruteforce remotely a ftp account.
